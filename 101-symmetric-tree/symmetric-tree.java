@@ -35,11 +35,10 @@ class Solution {
         if(root==null)return true;
         return check(root.left,root.right);
     }
-    public boolean check(TreeNode left,TreeNode right){
-        if(left==null && right == null)return true;
-        if(left==null || right == null)return false;
-        if(left.val != right.val)return false;
-        return check(left.left,right.right) && check(left.right,right.left); 
+    public boolean check(TreeNode root1,TreeNode root2){
+        if(root1==null && root2==null)return true;
+        if(root1==null || root2==null || root1.val!=root2.val)return false;
+        return check(root1.left,root2.right) && check(root1.right,root2.left);
     }
     // public void inorder(TreeNode root,List<Integer>temp){
     //     if(root==null){

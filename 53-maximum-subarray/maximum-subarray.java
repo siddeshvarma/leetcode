@@ -3,10 +3,9 @@ class Solution {
         int sum=0;
         int ans=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
-            sum=sum+nums[i];
+            sum+=nums[i];
             ans=Math.max(ans,sum);
             if(sum<0)sum=0;
-          
         }return ans;
     }
 }
